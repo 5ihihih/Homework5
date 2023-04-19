@@ -22,10 +22,11 @@ element getElement();
 
 int main(void)
 {
+	printf("[----- [오인화] [2022078036] -----]");
 	QueueType *cQ = createQueue();		//QueueType형 포인터변수 cQ를 선언하고 함수 createQueue()를 호출해 리턴값을 대입한다
 	element data;
 	char command;
-
+	
 	do{
 		printf("\n-----------------------------------------------------\n");
 		printf("                     Circular Q                   \n");
