@@ -4,7 +4,6 @@
 #include<string.h>
 #define MAX_STACK_SIZE 10
 #define MAX_EXPRESSION_SIZE 20
-/* stack 내에서 우선순위는 내림차순, lparen = 0 가장 낮음 */
 
 typedef enum{
     lparen = 0,     /* ( 왼쪽 괄호 */
@@ -40,7 +39,7 @@ void evaluation();
 
 int main()
 {
-    printf("[----- [오인화] [2022078036] -----]");
+    printf("[----- [오인화] [2022078036] -----]\n");
     
     char command;
     do{
@@ -54,7 +53,7 @@ int main()
         scanf(" %c", &command);
 
         switch(command) {
-            case 'i': case 'I':     //'i' 또는 'I'를 입력받으면 수식을 입력받는다
+            case 'i': case 'I':     
                 getInfix();
                 break;
             case 'p': case 'P':
@@ -137,7 +136,7 @@ precedence getPriority(char x)
 }
 
 void charCat(char* c){
-    if (postfixExp == '\0')
+    if (postfixExp[0] == '\0')
         strncpy(postfixExp, c, 1);
     else
         strncat(postfixExp, c, 1);
